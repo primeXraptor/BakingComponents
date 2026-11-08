@@ -1,0 +1,64 @@
+.button {
+  --btn-accent: #0f1b3d;
+  --btn-on-accent: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 10px;
+  font-family: var(--font-body, inherit);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease, color 160ms ease;
+}
+:global(html.dark) .button {
+  --btn-accent: #e2bd64;
+  --btn-on-accent: #0f1b3d;
+}
+.hard {
+  background: var(--btn-accent);
+  color: var(--btn-on-accent);
+}
+.hard:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--btn-accent) 88%, var(--btn-on-accent));
+}
+.light {
+  background: color-mix(in srgb, var(--btn-accent) 10%, #fff);
+  color: var(--btn-accent);
+}
+.light:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--btn-accent) 18%, #fff);
+}
+:global(html.dark) .light {
+  background: color-mix(in srgb, var(--btn-accent) 15%, #0f1b3d);
+}
+:global(html.dark) .light:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--btn-accent) 24%, #0f1b3d);
+}
+.button:focus-visible {
+  outline: 2px solid var(--btn-accent);
+  outline-offset: 3px;
+}
+.button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.button > svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

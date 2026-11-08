@@ -1,0 +1,236 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  width: var(--visual-viewport-width, 100vw);
+  height: var(--visual-viewport-height, 100dvh);
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(15, 27, 61, 0.42);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.modal {
+  width: 100%;
+  height: max-content;
+  transform: translate3d(0, var(--popup-drag-offset, 0px), 0);
+  transition: transform 180ms ease-out;
+  max-height: calc(var(--visual-viewport-height, 100dvh) - 8px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--auth-border);
+  border-bottom: 0;
+  border-radius: 28px 28px 0 0;
+  background: var(--auth-background);
+  box-shadow: 0 -18px 60px rgba(15, 27, 61, 0.22);
+  outline: none;
+}
+
+.dialog {
+  outline: none;
+}
+
+.overlay[data-entering] {
+  animation: registration-modal-backdrop-in 280ms ease-out both;
+}
+
+.modal[data-entering] {
+  animation: registration-modal-mobile-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (min-width: 768px) {
+  .overlay {
+    align-items: center;
+    padding: 24px;
+  }
+
+  .modal {
+    width: 500px;
+    max-width: calc(100vw - 48px);
+    max-height: calc(var(--visual-viewport-height, 100dvh) - 48px);
+    border-bottom: 1px solid var(--auth-border);
+    border-radius: 28px;
+    box-shadow: 0 24px 80px rgba(15, 27, 61, 0.3);
+  }
+
+  .modal[data-entering] {
+    animation-name: registration-modal-desktop-in;
+    animation-duration: 440ms;
+  }
+}
+
+@keyframes registration-modal-backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes registration-modal-mobile-in {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes registration-modal-desktop-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 56px, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.overlay[data-exiting] {
+  animation: registration-modal-backdrop-out 300ms ease-in both;
+}
+
+.modal[data-dragging] {
+  transition: none;
+}
+.modal[data-exiting] {
+  animation: registration-modal-mobile-out 300ms cubic-bezier(.4, 0, 1, 1) both;
+}
+
+@keyframes registration-modal-backdrop-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes registration-modal-mobile-out {
+  from {
+    transform: translate3d(0, var(--popup-drag-offset, 0px), 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@media (min-width: 768px) {
+  .modal[data-exiting] {
+    animation: registration-modal-desktop-out 200ms ease-in both;
+  }
+}
+@keyframes registration-modal-desktop-out {
+  to {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0) scale(.985);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .overlay[data-entering], .overlay[data-exiting], .modal[data-entering], .modal[data-exiting] {
+    animation: none;
+  }
+  .modal {
+    transition: none;
+  }
+}
+
+.modal {
+  display: flex;
+  overflow: hidden;
+}
+.dialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  max-height: inherit;
+}
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  flex-shrink: 0;
+  touch-action: none;
+  cursor: grab;
+}
+.handle:active {
+  cursor: grabbing;
+}
+.handle span {
+  width: 36px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--auth-border);
+}
+.body {
+  padding: 0 20px 20px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.footer {
+  flex-shrink: 0;
+  padding: 0 20px max(24px, env(safe-area-inset-bottom));
+}
+.close {
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--auth-switch-background);
+  color: var(--auth-text);
+  cursor: pointer;
+}
+.close:hover {
+  background: var(--auth-switch-hover);
+}
+.close:focus-visible {
+  outline: 2px solid var(--auth-focus);
+  outline-offset: 2px;
+}
+.close:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+@media (min-width: 768px) {
+  .handle {
+    display: none;
+  }
+  .body {
+    padding: 24px 24px 20px;
+  }
+  .footer {
+    padding: 0 24px 24px;
+  }
+}
+
+.modal, .body {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+.modal::-webkit-scrollbar, .body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.modal::-webkit-scrollbar-track, .body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal::-webkit-scrollbar-thumb, .body::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+:global(html.dark) .modal, :global(html.dark) .body {
+  scrollbar-color: #64748b transparent;
+}
+:global(html.dark) .modal::-webkit-scrollbar-thumb, :global(html.dark) .body::-webkit-scrollbar-thumb {
+  background: #64748b;
+}

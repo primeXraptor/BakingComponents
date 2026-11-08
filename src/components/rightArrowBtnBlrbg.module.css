@@ -1,0 +1,46 @@
+.arrow {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 60%);
+  background: rgb(255 255 255 / 45%);
+  color: #0f1b3d;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.arrow svg {
+  width: 24px;
+  height: 24px;
+}
+:global(html.dark) .arrow {
+  background: rgb(15 27 61 / 45%);
+  border-color: rgb(255 255 255 / 20%);
+  color: #fff;
+}
+.inverse, :global(html.dark) .inverse {
+  background: rgb(255 255 255 / 20%);
+  border-color: rgb(255 255 255 / 30%);
+  color: #fff;
+}
+.arrow {
+  transition:
+    box-shadow 180ms ease, transform 180ms ease;
+}
+.arrow:hover, :global(a:focus-visible) .arrow {
+  box-shadow: 0 5px 18px rgb(15 27 61 / 28%);
+  transform: translateY(-2px);
+}
+:global(html.dark) .arrow:hover, :global(html.dark a:focus-visible) .arrow {
+  box-shadow: 0 5px 20px rgb(0 0 0 / 45%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .arrow {
+    transition: none;
+  }
+  .arrow:hover, :global(a:focus-visible) .arrow {
+    transform: none;
+  }
+}

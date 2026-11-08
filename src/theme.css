@@ -1,0 +1,40 @@
+:root {
+  --auth-background: #f8f9fc;
+  --auth-border: rgba(15, 27, 61, 0.22);
+  --auth-focus: #0f1b3d;
+  --auth-switch-background: rgba(15, 27, 61, 0.035);
+  --auth-switch-hover: rgba(15, 27, 61, 0.07);
+  --auth-text: #0d1421;
+  --border: oklch(0.922 0 0);
+  --font-body: system-ui, sans-serif;
+  --gold: #c9a84c;
+  --page-background: #f8f9fc;
+  --search-border: #d6dce5;
+  --search-hover: #edf0f5;
+  --search-muted: #526176;
+  --search-surface: #fff;
+  --search-text: #0d1421;
+  --search-thumb: #526176;
+  --text-muted: #526176;
+  --text-primary: #0d1421;
+  --text-secondary: #1f2937;
+}
+html.dark {
+  --page-background: #0f1b3d;
+  --text-primary: #fff;
+  --text-secondary: #d4dcea;
+  --text-muted: #aebbd0;
+  --border: #2c3b59;
+  --gold: #e2bd64;
+  --auth-background: #0f1b3d;
+  --auth-text: #fff;
+  --auth-border: #526176;
+  --auth-focus: #e2bd64;
+  --auth-switch-background: #1a2d5e;
+  --auth-switch-hover: #2c3b59;
+  --search-surface: #0f1b3d;
+  --search-text: #fff;
+  --search-hover: #1a2d5e;
+  --search-border: #526176;
+  --search-muted: #aebbd0;
+}
