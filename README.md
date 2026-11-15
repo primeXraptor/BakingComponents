@@ -16,6 +16,10 @@ npm run build
 
 The development server serves an interactive component gallery. The build creates an ES module library, TypeScript declarations and `dist/baking-components.css`. React and React DOM are peer dependencies (18 or 19).
 
+## Contestant dashboard
+
+The full Kunchanada contestant dashboard is available as a reusable composition and individual components, with structural CSS and no bundled visual theme. See [dashboard usage and integration](DASHBOARD.md). Import from `baking-components/dashboard` and `baking-components/dashboard.css` to avoid the original component theme. The gallery links to an interactive dashboard example.
+
 ## Use
 
 Build the library and install its directory into a React app (`npm install /path/to/BakingComponents`). Import the CSS once at your app entry:

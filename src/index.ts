@@ -8,3 +8,5 @@ export * from "./components/cardLinkBtn";
 export * from "./components/rightArrowBtnBlrbg";
 export * from "./components/filter-dropdown";
 import "./theme.css";
+
+export * from "./dashboard";

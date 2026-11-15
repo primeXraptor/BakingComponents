@@ -15,13 +15,18 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles.css": "./dist/baking-components.css"
+    "./styles.css": "./dist/baking-components.css",
+    "./dashboard": {
+      "types": "./dist/dashboard/index.d.ts",
+      "import": "./dist/dashboard.js"
+    },
+    "./dashboard.css": "./dist/dashboard.css"
   },
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
-    "build": "tsc --emitDeclarationOnly && vite build",
+    "build": "tsc --emitDeclarationOnly && vite build && vite build --config vite.dashboard.config.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "dev": "vite --host 0.0.0.0"

@@ -1,0 +1,267 @@
+/* Structure only. No palette, hover colors, gradients, shadows, or theme globals. */
+.root {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 0;
+}
+.root *,
+.dialog * {
+  box-sizing: border-box;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 16px;
+}
+.main {
+  min-width: 0;
+  padding: 24px;
+}
+.context {
+  display: none;
+  padding: 24px;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: auto;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.nav button,
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 12px;
+  text-align: start;
+}
+.root button,
+.dialog button {
+  cursor: pointer;
+}
+.root button:disabled,
+.dialog button:disabled {
+  cursor: not-allowed;
+}
+.root [aria-current="page"],
+.root [aria-selected="true"],
+.root [aria-pressed="true"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.panel {
+  padding: 20px;
+  min-width: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+.fields dt {
+  font-weight: 600;
+}
+.fields dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+}
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.logos {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.logos img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.banner {
+  aspect-ratio: 16/5;
+  overflow: hidden;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+  width: 100%;
+  min-height: 100px;
+  padding: 16px;
+  text-align: start;
+}
+.image {
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+}
+.calendar {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 4px;
+}
+.calendar td {
+  vertical-align: top;
+  height: 100px;
+  padding: 6px;
+  overflow-wrap: anywhere;
+}
+.calendar td button {
+  max-width: 100%;
+}
+.calendar [data-outside="true"] {
+  visibility: hidden;
+}
+.event {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+.pdf {
+  width: 100%;
+  min-height: 70dvh;
+  border: 0;
+}
+.mobileHeader,
+.mobileBottom {
+  display: none;
+}
+.dialog {
+  width: min(640px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  padding: 24px;
+}
+.dialog:focus {
+  outline: none;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.status {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 1280px) {
+  .root {
+    grid-template-columns: 220px minmax(0, 1fr) 280px;
+  }
+  .context {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .root {
+    display: block;
+  }
+  .sidebar {
+    display: none;
+  }
+  .main {
+    padding: 16px 16px 100px;
+  }
+  .mobileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+  .mobileBottom {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: sticky;
+    bottom: 0;
+    padding: 12px;
+    z-index: 20;
+  }
+  .fields,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .calendar td {
+    height: 64px;
+    padding: 2px;
+  }
+}
