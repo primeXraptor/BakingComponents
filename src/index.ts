@@ -10,3 +10,5 @@ export * from "./components/filter-dropdown";
 import "./theme.css";
 
 export * from "./dashboard";
+
+export * from "./auth";

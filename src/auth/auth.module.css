@@ -1,0 +1,86 @@
+/* Structural styles only; native controls and focus indicators remain. */
+.shell {
+  width: 100%;
+  max-width: 672px;
+  margin-inline: auto;
+  padding: 48px 24px;
+}
+.login {
+  max-width: 448px;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.links [aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.field input,
+.field textarea {
+  box-sizing: border-box;
+  padding: 11px 14px;
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+}
+.field textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.submit {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 24px;
+}
+.credentials {
+  display: grid;
+  gap: 20px;
+  margin: 24px 0;
+}
+.credentials dd {
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+}
+.error {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .shell {
+    padding: 24px 16px;
+  }
+}
+.shell {
+  box-sizing: border-box;
+}
+.shell fieldset {
+  min-width: 0;
+}

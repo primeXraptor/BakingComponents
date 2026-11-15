@@ -20,6 +20,10 @@ The development server serves an interactive component gallery. The build create
 
 The full Kunchanada contestant dashboard is available as a reusable composition and individual components, with structural CSS and no bundled visual theme. See [dashboard usage and integration](DASHBOARD.md). Import from `baking-components/dashboard` and `baking-components/dashboard.css` to avoid the original component theme. The gallery links to an interactive dashboard example.
 
+## Login and registration
+
+Reusable school login and registration forms are available from `baking-components/auth`, with structural styles from `baking-components/auth.css`. Authentication and uploads use host callbacks. See [auth usage and integration](AUTH.md); the gallery includes a local demo.
+
 ## Use
 
 Build the library and install its directory into a React app (`npm install /path/to/BakingComponents`). Import the CSS once at your app entry:
