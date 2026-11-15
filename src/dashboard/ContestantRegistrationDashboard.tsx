@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import type {
-  ContestantRegistrationDashboardProps,
+  StructuralContestantDashboardProps,
   ContestantSlot,
   DashboardView,
 } from "./types";
@@ -34,7 +34,7 @@ import { DashboardCalendar } from "./DashboardCalendar";
 import s from "./dashboard.module.css";
 import { DashboardAccountMenu, DashboardSearch } from "./navigation";
 /** Presentation layer only: callers own authentication, fetching and persistence. */
-export function ContestantRegistrationDashboard({
+export function StructuralContestantDashboard({
   profile,
   contestants,
   onSaveContestant,
@@ -62,7 +62,7 @@ export function ContestantRegistrationDashboard({
   onViewChange,
   className,
   title = "Dashboard",
-}: ContestantRegistrationDashboardProps) {
+}: StructuralContestantDashboardProps) {
   const [saving, setSaving] = useState(false);
   const [localView, setLocalView] = useState<DashboardView>(initialView),
     [tabs, setTabs] = useState<DashboardView[]>([

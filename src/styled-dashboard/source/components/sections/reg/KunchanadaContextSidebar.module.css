@@ -1,0 +1,102 @@
+.panel {
+  display: none;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px 20px;
+  border-left: 1px solid #e2e8f0;
+  background: #fff;
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.6;
+  animation: reveal 180ms ease-out;
+}
+.panel h2, .section h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+}
+.section {
+  margin-top: 16px;
+}
+.section:first-child {
+  margin-top: 0;
+}
+.section p {
+  margin: 8px 0 0;
+  color: #64748b;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.list li {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.list li p {
+  margin: 0;
+  color: #334155;
+  white-space: pre-wrap;
+}
+.list time {
+  display: block;
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 11px;
+}
+.deadlines {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.deadlines time, .deadlines p {
+  display: block;
+  margin: 8px 0 0;
+  color: #64748b;
+}
+:global(html.dark) .panel {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+:global(html.dark) .panel h2, :global(html.dark) .section h2 {
+  color: var(--heading, #f1f5f9);
+}
+:global(html.dark) .section p, :global(html.dark) .list time, :global(html.dark) .deadlines time, :global(html.dark) .deadlines p {
+  color: #94a3b8;
+}
+:global(html.dark) .list li {
+  border-color: #334155;
+}
+:global(html.dark) .list li p {
+  color: #e2e8f0;
+}
+@media (width >= 80rem) {
+  .panel {
+    display: block;
+  }
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}

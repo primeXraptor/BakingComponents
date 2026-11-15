@@ -1,0 +1,37 @@
+.countdowns {
+  display: grid;
+  gap: 28px;
+  width: 100%;
+  text-align: center;
+}
+.countdown {
+  color: var(--auth-text, #334155);
+}
+.countdown h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.countdown p {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+.countdown time {
+  display: block;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--auth-muted, #64748b);
+}
+.auth {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.auth:has(.countdowns:empty) {
+  display: none;
+}

@@ -1,0 +1,257 @@
+{
+  "repository": "primeXraptor/mmu-main",
+  "commit": "123804276c7ccc47a8afe1e94448a33dce0d3523",
+  "description": "Original CSS bytes and JSX class/style attributes. Branding props and runtime adapters are deliberate changes.",
+  "entries": [
+    {
+      "file": "components/BreadCrumbPDF/BreadCrumbPDFApp.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "components/BreadCrumbPDF/BreadCrumbPdfViewer.css",
+      "kind": "css",
+      "sha256": "2af4cb66de14f937df15c80687078c083e03581da1ba2c3d5dd8439506479324"
+    },
+    {
+      "file": "components/BreadCrumbPDF/BreadCrumbPdfViewer.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "d5dae5275e6da5734ceb1b310d27cf8cdd6f447e4ff954289c7163c7982785d4"
+    },
+    {
+      "file": "components/BreadCrumbPDF/PdfPage.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "81fa9baffb8fcc9f3664bee3963649ae7577bf1c1d1979b54058166cae719027"
+    },
+    {
+      "file": "components/admin/AdminFormUI.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "6cbd58b0f835c811fc969dcbc8081384bf718df29e53ff54828a76ab9b36a457"
+    },
+    {
+      "file": "components/admin/DashboardMessagesManager.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "7dde448ebdc4f6508a8f51f48eec7f6a387dfa2157b459043d63b6775637ca21"
+    },
+    {
+      "file": "components/admin/KunchanadaCalendarManager.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "a271b3f1fe57f069dee11cb4a9f4bd36e1b8402dea745fdcc468a3f8fce5d9df"
+    },
+    {
+      "file": "components/admin/KunchanadaExportButton.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "efbf3eccf3181dec353e2577621575b044597f5677a507c9660f59e337bacdb6"
+    },
+    {
+      "file": "components/admin/KunchanadaManager.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "5d3588b2556937c34fd3b4c3008736e4c7ebc4b400b22e130fbd2bcb5863a2de"
+    },
+    {
+      "file": "components/admin/KunchanadaPersonalAlertsManager.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "244d90600d8a3e6b771fb32fd89bca45d42f3db386315150f64d316033562147"
+    },
+    {
+      "file": "components/admin/KunchanadaRegistrationControls.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "f107d11b9935a1f5b753f0ab684931648ec95d1fbadca18bb98c580a119b939a"
+    },
+    {
+      "file": "components/base/badges/badges.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "a595894c5074d0ff28c2e8807342edf3f8140a0ff1f748c3b7936a4b2f3f2495"
+    },
+    {
+      "file": "components/base/buttons/button.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "253bccd61fa9566d6807022ed38980e9ff8957b26245ec08d2e6285b8f604f9e"
+    },
+    {
+      "file": "components/base/input/hint-text.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "530ab0f2435d0c5492dd3639580d784710778c1782ee8e34ff9bdf224136ff2f"
+    },
+    {
+      "file": "components/base/input/input.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "1faf61044015d77c954e8477b622dbe0a87d0e4db5d8e7d3636b67c8a8a24358"
+    },
+    {
+      "file": "components/base/input/label.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "7b9398f8cfbfb1c922f8e3eb8d2f9871ef272921f845cfe0ebf2d121923f64b5"
+    },
+    {
+      "file": "components/base/tooltip/tooltip.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "b3859cc2f98bf402067fe5be14dc4cf35b450173892145196e55c791a1762f49"
+    },
+    {
+      "file": "components/foundations/dot-icon.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "components/layout/LenisProvider.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "components/layout/ThemeInitializer.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "components/sections/reg/ContestantRegistrationDashboard.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "c43b794ba4220275c070d32a5cf801d4f07afc542d26c7f4b7d5f2eca920bdb1"
+    },
+    {
+      "file": "components/sections/reg/DashboardMobileNavigation.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "7f910dc0f64922d13482e313cec32ee1fe9b3e7d65f03ab5d78eda3bcdecdffc"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaAccountMenu.module.css",
+      "kind": "css",
+      "sha256": "1d44c284fb6f7519b2fc3f11f4f3202674cf3d4ee0bd7ffa96875aaafb25a104"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaAccountMenu.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "b01992fdf2a05224a9b595451ac2c08ec43fc1ca192e705255f42b0b2f558037"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaCalendar.module.css",
+      "kind": "css",
+      "sha256": "b49e8d3fd88a4fdf400342859ef1ae7ee38bd9a2f11af34602eb411dd44d2efc"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaCalendar.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "963a3c9b3b370a42c976cf71f4900ef32cb571500d9ca5e42f4c3b2d22212c26"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaContactForm.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "3d09ab969ec8adb8f1aee0c9789d1a1fa6033f0996a5754fdb5740a502e9238a"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaContextSidebar.module.css",
+      "kind": "css",
+      "sha256": "f607a9a109b2273c60c38f77d27f059a70854b7fd7a07380ff9a4128aff55a31"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaContextSidebar.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "e5afb83d023107a6ffb5793c2a3d7451780425efe566b4db51bb48205248e7ce"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaDashboardNotifications.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "22125457f772a66d9181382e902e198f7c979e48ec4fcd3eeecac1cbac3324ff"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaDashboardTheme.css",
+      "kind": "css",
+      "sha256": "f08dcacb8c21360e3ced4e932c6bb16864af2084fdc9b7b51eea719c5b864068"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaMainCategories.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "e82a52d2d733af6dfa93feb371e4c4b42a0fbd0c16760834ed7be4ff46764812"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaMessageComposer.module.css",
+      "kind": "css",
+      "sha256": "a770bb73bdb0860fefa500077e88a840812d9e798572cc4b8794801420268589"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaMobileTabs.module.css",
+      "kind": "css",
+      "sha256": "75f04f4afabb3712f271ba3511eee13c333d22a91c7f9bc04ef0f5d698974a04"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaQuickResponses.module.css",
+      "kind": "css",
+      "sha256": "a61b5732a61b7d4ac43dfbdbd3d11223663933d7f63c2a25afcc7adfed05bd4b"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaQuickResponses.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "1eb4b5b1c439dc08dd8fce408fa02d38fd900600ba10e744e99b13c5d2d02843"
+    },
+    {
+      "file": "components/sections/reg/KunchanadaSearchDialog.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "d5bc2c27188964cc92e397017be43beca3178a598eebf67eb60159f1f38b42a3"
+    },
+    {
+      "file": "components/sections/reg/LockedContestantsTree.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "52fede4d40cd1bfcb77e3a34e534f5d2d810ba0105fb692305972425a11957b8"
+    },
+    {
+      "file": "components/sections/reg/RegistrationCountdowns.module.css",
+      "kind": "css",
+      "sha256": "3f5d2d7671211297c199d35747cba7da3322d1554d7d5b1831cbf23147d6067e"
+    },
+    {
+      "file": "components/sections/reg/RegistrationCountdowns.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "cbb09a93e616f2997c724f885f5266cc6e62278c77937591f1d84da27bc3cd84"
+    },
+    {
+      "file": "components/ui/CountdownTimer.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "379d7358c0659fcec8e8c06a3bcccd15c8551cd15ebba748f5e5e00a6777c6ed"
+    },
+    {
+      "file": "components/ui/EventLogo.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "1688fb9c9a1617214f6a64c96c0da4253348fec3701e530d655b336748f58669"
+    },
+    {
+      "file": "components/ui/GlassSurface.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "3ea7b5cac14f96bf38956ddcba1d5bf70ac0e82263405919bd2cf8ced2f9b013"
+    },
+    {
+      "file": "components/ui/OptionWheel.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "1d7143e10e1dd16f5cb8de7d19490e98d7c50619dfdb21af1022015cb20d2f84"
+    },
+    {
+      "file": "components/ui/filter-dropdown.module.css",
+      "kind": "css",
+      "sha256": "12df7dad303be90dde37b1a62b58ab325e8e0a3baa4916ed5f00d7fe4d90f518"
+    },
+    {
+      "file": "components/ui/filter-dropdown.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "a420ae1fe3ee6691e1645aeff680970697f2f7a6338a08dedfda19b6c523237d"
+    },
+    {
+      "file": "components/ui/pop-up-model.module.css",
+      "kind": "css",
+      "sha256": "c76134ba442b7d2d3f0d143d9e1b1d513e59a761b254f799d74a228796149e1a"
+    },
+    {
+      "file": "components/ui/pop-up-model.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "6212270eb55e26bac976ff5ffb8475321e5179e79627e4e833bf87e891f6adb8"
+    },
+    {
+      "file": "components/ui/search-pop-up-model.module.css",
+      "kind": "css",
+      "sha256": "754cf0c1f73e33b6f939c789014354381b7770399cbc20968e3c80e59b8cf1a0"
+    },
+    {
+      "file": "components/ui/search-pop-up-model.tsx",
+      "kind": "jsx-visual-attributes",
+      "sha256": "698ba52f919f147d6fefce805f94fcd41bbaf798f22bcd30c482b1e86789cdf8"
+    }
+  ]
+}

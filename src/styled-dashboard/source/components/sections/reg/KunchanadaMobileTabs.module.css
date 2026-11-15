@@ -1,0 +1,86 @@
+.popover {
+  z-index: 400;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 150px);
+  overflow-y: auto;
+  padding: 4px 8px 12px 4px;
+  outline: none;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  outline: none;
+}
+.card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  max-width: 100%;
+  padding: 8px 14px;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 92%);
+  box-shadow: 0 2px 12px rgb(15 23 42 / 8%);
+  backdrop-filter: blur(20px);
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 120ms ease;
+  animation: slide-in 240ms cubic-bezier(.22, 1, .36, 1) var(--tab-delay) both;
+}
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.card[data-focused], .card[data-hovered] {
+  background: #e2e8f0;
+}
+.popover[data-exiting] {
+  animation: fade-out 120ms ease-in;
+  pointer-events: none;
+}
+:global(html.dark) .card {
+  background: rgb(30 41 59 / 92%);
+  border-color: rgb(51 65 85 / 70%);
+  color: #e2e8f0;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 18%);
+}
+:global(html.dark) .icon {
+  color: var(--heading, #e2bd64);
+}
+:global(html.dark) .card[data-focused], :global(html.dark) .card[data-hovered] {
+  background: #334155;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .popover[data-exiting] {
+    animation: none;
+  }
+}
+@media (width >= 48rem) {
+  .popover {
+    display: none;
+  }
+}

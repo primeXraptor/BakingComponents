@@ -18,7 +18,9 @@ The development server serves an interactive component gallery. The build create
 
 ## Contestant dashboard
 
-The full Kunchanada contestant dashboard is available as a reusable composition and individual components, with structural CSS and no bundled visual theme. See [dashboard usage and integration](DASHBOARD.md). Import from `baking-components/dashboard` and `baking-components/dashboard.css` to avoid the original component theme. The gallery links to an interactive dashboard example.
+The default dashboard is a direct styled copy of mmu-main's Kunchanada contestant dashboard, including its mobile UI, fonts, animations, and PDF viewer. Configure `event_name`, `school_logo`, `club_logo`, and `event_logo`. Import from `baking-components/dashboard` and `baking-components/dashboard.css`.
+
+The related dashboard admin manager is separately available from `baking-components/dashboard-admin` and `baking-components/dashboard-admin.css`. See [dashboard usage, backend adapters, and admin integration](DASHBOARD.md). Both have interactive gallery demos.
 
 ## Login and registration
 
@@ -65,7 +67,7 @@ The original file names and component APIs are retained except that link props u
 
 Styles use CSS modules and do not require Tailwind. Global theme defaults are included in the CSS export; customize the variables from `src/theme.css` in your application stylesheet. Add `dark` to the `<html>` element for dark mode. Use `boxGridStyles` for grid content; column counts collapse responsively as in the source.
 
-Site-specific news/event/authentication components, media players and components dependent on application providers are outside this extraction. The original `mmu-main` checkout remains unchanged.
+The dashboard, dashboard admin panel, and authentication forms are documented above. Unrelated site pages and media players remain outside this extraction. The original `mmu-main` checkout remains unchanged.
 
 ## Attribution
 

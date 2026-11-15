@@ -1,0 +1,100 @@
+[data-kunchanada-dashboard] {
+  --dashboard-banner-base: rgba(255, 255, 255, 0.96);
+  --dashboard-banner-mid: rgba(255, 255, 255, 0.12);
+  --dashboard-wheel-text: #64748b;
+  --dashboard-wheel-active: #0f172a;
+  /* Keep every tab inside the dashboard; scroll content within its own pane. */
+  display: flex;
+  height: 100dvh;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+[data-kunchanada-dashboard] > header {
+  flex-shrink: 0;
+}
+
+[data-kunchanada-dashboard] > [data-dashboard-grid] {
+  min-height: 0;
+  flex: 1;
+  grid-template-rows: minmax(0, 1fr);
+  overflow: hidden;
+}
+
+[data-kunchanada-dashboard] > [data-dashboard-grid] > div {
+  height: 100%;
+  min-height: 0;
+}
+
+[data-kunchanada-dashboard] [data-dashboard-content] {
+  display: flex;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+}
+
+@media (width < 48rem) {
+  /* Let these panes continue beneath the floating navigation. Keep the
+       navigation clearance inside each scroller so its last item stays reachable. */
+  [data-kunchanada-dashboard] [data-dashboard-content]:is(
+        [data-dashboard-view="contestant-registration"],
+        [data-dashboard-view="school-profile"]
+    ) {
+    padding-bottom: 0;
+  }
+
+  [data-kunchanada-dashboard] [data-dashboard-view="school-profile"] [data-dashboard-panel],
+    [data-kunchanada-dashboard] [data-dashboard-view="contestant-registration"] [data-dashboard-panel]:not(.overflow-hidden),
+    [data-kunchanada-dashboard] [data-contestant-scroll] {
+    padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+    scroll-padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Let a downward swipe at the top reach the browser's pull-to-refresh. */
+  [data-kunchanada-dashboard] [data-dashboard-panel],
+    [data-kunchanada-dashboard] [data-dashboard-panel] [data-lenis-prevent] {
+    overscroll-behavior-y: auto;
+  }
+}
+
+html.dark [data-kunchanada-dashboard] {
+  --dashboard-banner-base: rgba(15, 23, 42, 0.96);
+  --dashboard-banner-mid: rgba(15, 23, 42, 0.4);
+  --dashboard-wheel-text: #94a3b8;
+  --dashboard-wheel-active: #f1f5f9;
+}
+
+/* Theme the viewer controls while keeping the uploaded PDF's colors intact. */
+html.dark [data-kunchanada-dashboard] :is(.bc-shell, .bc-header, .bc-message) {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+html.dark [data-kunchanada-dashboard] .bc-message strong {
+  color: #e2e8f0;
+}
+
+html.dark [data-kunchanada-dashboard] .bc-message p {
+  color: #94a3b8;
+}
+
+html.dark [data-kunchanada-dashboard] :is(.bc-file, .bc-message__icon) {
+  background: #431407;
+  border-color: #9a3412;
+  color: #fdba74;
+}
+
+html.dark [data-kunchanada-dashboard] .bc-page-loading {
+  background: #0f172acc;
+  color: #fdba74;
+}
+
+/* The theme's content flex layout must not reveal mobile fallback content in
+   the desktop welcome state. */
+@media (min-width: 768px) {
+  [data-kunchanada-dashboard] [data-dashboard-content][data-dashboard-empty="true"] {
+    display: none;
+  }
+}

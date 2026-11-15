@@ -1,0 +1,45 @@
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.column {
+  flex-direction: column;
+  align-items: stretch;
+}
+.buttons > button {
+  padding: 7px 10px;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.buttons > button:hover {
+  background: #dbeafe;
+}
+.buttons > button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.buttons > button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.mention {
+  color: #1d4ed8;
+}
+:global(html.dark) .buttons > button {
+  border-color: #80662e;
+  background: #352d1c;
+  color: #e2bd64;
+}
+:global(html.dark) .buttons > button:hover {
+  background: #493b20;
+}
+:global(html.dark) .mention {
+  color: #e2bd64;
+}

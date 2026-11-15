@@ -9,7 +9,7 @@ import {
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {
-  ContestantRegistrationDashboard,
+  StructuralContestantDashboard as ContestantRegistrationDashboard,
   ContestantEditor,
   DashboardCalendar,
   PersonalAlertsList,
@@ -17,7 +17,7 @@ import {
   eventsOnCalendarDay,
   type KunchanadaContestant,
   type DashboardProfile,
-} from "../src/dashboard";
+} from "../src/dashboard/structural-index";
 afterEach(cleanup);
 const profile: DashboardProfile = {
   schoolCode: "ABC",

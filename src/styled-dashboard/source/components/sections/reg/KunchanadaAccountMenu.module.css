@@ -1,0 +1,207 @@
+.account {
+  width: 100%;
+}
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #0f172a;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+.trigger[data-hovered], .trigger[data-focused], .trigger[aria-expanded="true"] {
+  background: #f1f5f9;
+}
+.trigger[data-focus-visible] {
+  outline: 2px solid #64748b;
+  outline-offset: 3px;
+}
+.trigger[data-disabled] {
+  cursor: wait;
+  opacity: .7;
+}
+.logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+.image {
+  object-fit: contain;
+  padding: 3px;
+}
+.schoolName {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+}
+.chevron {
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: transform 160ms ease;
+}
+.trigger[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+.popover {
+  z-index: 600;
+  width: var(--trigger-width);
+  min-width: 180px;
+  max-width: calc(100vw - 24px);
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #f1f5f9;
+  color: #334155;
+  box-shadow: 0 12px 40px rgb(15 23 42 / 14%);
+  backdrop-filter: blur(20px);
+  outline: none;
+  --menu-enter-y: -4px;
+  transform-origin: top left;
+}
+.menu {
+  outline: none;
+}
+.popover[data-placement^="top"] {
+  --menu-enter-y: 4px;
+  transform-origin: bottom left;
+}
+.popover[data-entering] {
+  animation: menu-in 200ms cubic-bezier(.16, 1, .3, 1);
+}
+.popover[data-exiting] {
+  animation: menu-out 140ms ease-in;
+  pointer-events: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease, color 120ms ease;
+}
+.item[data-focused], .item[data-hovered] {
+  background: #e2e8f0;
+}
+.item[data-disabled] {
+  opacity: .5;
+  cursor: wait;
+}
+.separator {
+  height: 1px;
+  margin: 5px 8px;
+  background: #e2e8f0;
+}
+.logout, .error {
+  color: #b91c1c;
+}
+.error {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.spinner {
+  flex-shrink: 0;
+  animation: spin 1s linear infinite;
+}
+:global(html.dark) .trigger {
+  background: transparent;
+  color: #f1f5f9;
+}
+:global(html.dark) .trigger[data-hovered], :global(html.dark) .trigger[data-focused], :global(html.dark) .trigger[aria-expanded="true"] {
+  background: #1e293b;
+}
+:global(html.dark) .trigger[data-focus-visible] {
+  outline-color: #e2bd64;
+}
+:global(html.dark) .popover {
+  border-color: #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+}
+:global(html.dark) .item[data-focused], :global(html.dark) .item[data-hovered] {
+  background: #263349;
+}
+:global(html.dark) .separator {
+  background: #334155;
+}
+:global(html.dark) .logout, :global(html.dark) .error {
+  color: #fda4af;
+}
+@media (48rem <= width < 80rem) {
+  .trigger {
+    min-height: 44px;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 15px;
+  }
+  .schoolName, .chevron {
+    display: none;
+  }
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--menu-enter-y)) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes menu-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(var(--menu-enter-y)) scale(.98);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trigger, .chevron, .item {
+    transition: none;
+  }
+  .spinner, .popover[data-entering], .popover[data-exiting] {
+    animation: none;
+  }
+}

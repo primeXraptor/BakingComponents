@@ -72,7 +72,7 @@ export interface ContestantSlot {
   subcategory: string;
   slot_number: 1 | 2;
 }
-export interface ContestantRegistrationDashboardProps {
+export interface StructuralContestantDashboardProps {
   profile: DashboardProfile;
   contestants: KunchanadaContestant[];
   onSaveContestant?: (input: ContestantInput) => Promise<KunchanadaContestant>;

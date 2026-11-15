@@ -1,5 +1,7 @@
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 export default defineConfig({
+  plugins: [tailwindcss()],
   build: {
     emptyOutDir: false,
     lib: {
@@ -9,7 +11,16 @@ export default defineConfig({
       cssFileName: "dashboard",
     },
     rollupOptions: {
-      external: [/^react($|\/)/, /^react-dom($|\/)/, "react-aria-components"],
+      external: [
+        /^react($|\/)/,
+        /^react-dom($|\/)/,
+        "react-aria-components",
+        "@untitledui/icons",
+        "sonner",
+        "pdfjs-dist",
+        "framer-motion",
+        "lucide-react",
+      ],
       output: { banner: '"use client";' },
     },
   },

@@ -1,0 +1,385 @@
+.calendar {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+  color: #0f172a;
+  font-size: 14px;
+}
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  flex-shrink: 0;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.heading > div {
+  min-width: 0;
+}
+.heading h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+.heading p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #475569;
+}
+.header .dateBadge {
+  display: block;
+  padding: 0;
+  width: 54px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+}
+.dateBadge span {
+  display: block;
+  padding: 3px;
+  background: #f8fafc;
+  font-size: 10px;
+  text-transform: none;
+}
+.dateBadge strong {
+  display: block;
+  padding: 2px;
+  color: var(--auth-heading, #0f1b3d);
+  font-size: 20px;
+}
+.controls {
+  display: flex;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-items: center;
+  gap: 10px;
+}
+.navigation button, .dateBadge, .detailsHeader button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.navigation button:hover, .more:hover {
+  background: #f1f5f9;
+}
+.monthTitle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.navigation {
+  display: flex;
+  flex-shrink: 0;
+}
+.navigation button {
+  border-radius: 0;
+}
+.navigation button:first-child {
+  border-radius: 7px 0 0 7px;
+}
+.navigation button:last-child {
+  border-radius: 0 7px 7px 0;
+}
+.navigation button + button {
+  margin-left: -1px;
+}
+.scroll {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.grid {
+  width: 100%;
+  min-width: 750px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.grid th {
+  height: 30px;
+  border: 1px solid #e2e8f0;
+  font-size: 11px;
+  font-weight: 400;
+  color: #64748b;
+}
+.grid td {
+  height: 140px;
+  padding: 8px;
+  vertical-align: top;
+  border: 1px solid #e2e8f0;
+}
+.grid th:first-child, .grid td:first-child {
+  border-left: 0;
+}
+.grid th:last-child, .grid td:last-child {
+  border-right: 0;
+}
+.grid tr:last-child td {
+  border-bottom: 0;
+}
+.outside {
+  background: #f8fafc;
+}
+.outside .dayNumber {
+  color: #94a3b8;
+}
+.dayNumber {
+  display: inline-flex;
+  min-width: 21px;
+  height: 21px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+.dayNumber[aria-current="date"] {
+  border-radius: 50%;
+  background: #0f1b3d;
+  color: #fff;
+}
+.dayEvents {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.event {
+  --event-color: #475569;
+  --event-bg: #f8fafc;
+  --event-border: #e2e8f0;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 3px 5px;
+  border: 1px solid var(--event-border);
+  border-radius: 5px;
+  background: var(--event-bg);
+  color: var(--event-color);
+  font: inherit;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+.event span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.event time {
+  flex-shrink: 0;
+  font-size: 10px;
+}
+.event[data-color="brand"], .event[data-color="purple"] {
+  --event-color: #0f1b3d;
+  --event-bg: #f1f5f9;
+  --event-border: #cbd5e1;
+}
+.event[data-color="green"] {
+  --event-color: #15803d;
+  --event-bg: #f0fdf4;
+  --event-border: #bbf7d0;
+}
+.event[data-color="blue"] {
+  --event-color: #1d4ed8;
+  --event-bg: #eff6ff;
+  --event-border: #bfdbfe;
+}
+.event[data-color="indigo"] {
+  --event-color: #4338ca;
+  --event-bg: #eef2ff;
+  --event-border: #c7d2fe;
+}
+.event[data-color="pink"] {
+  --event-color: #be185d;
+  --event-bg: #fdf2f8;
+  --event-border: #fbcfe8;
+}
+.event[data-color="orange"] {
+  --event-color: #c2410c;
+  --event-bg: #fff7ed;
+  --event-border: #fed7aa;
+}
+.event[data-color="yellow"] {
+  --event-color: #a16207;
+  --event-bg: #fefce8;
+  --event-border: #fef08a;
+}
+.more {
+  width: fit-content;
+  padding: 2px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #64748b;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+.empty {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+}
+.agenda {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.agenda h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+.eventTimes {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+.agenda .event {
+  margin-top: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+.details {
+  color: var(--auth-text);
+}
+.detailsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.detailsHeader h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--auth-heading);
+  overflow-wrap: anywhere;
+}
+.details article + article {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--auth-border);
+}
+.details article h3 {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.details article p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.details article .description {
+  display: block;
+  margin-top: 16px;
+  white-space: pre-wrap;
+}
+.calendar button:focus-visible, .scroll:focus-visible, .details button:focus-visible {
+  outline: 2px solid var(--auth-focus, #0f1b3d);
+  outline-offset: 2px;
+}
+:global(html.dark) .calendar {
+  border-color: #334155;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+:global(html.dark) .heading p, :global(html.dark) .grid th, :global(html.dark) .more, :global(html.dark) .empty {
+  color: #94a3b8;
+}
+:global(html.dark) .grid td, :global(html.dark) .grid th, :global(html.dark) .dateBadge, :global(html.dark) .navigation button {
+  border-color: #334155;
+}
+:global(html.dark) .outside, :global(html.dark) .dateBadge span {
+  background: #172033;
+}
+:global(html.dark) .dateBadge strong {
+  color: var(--heading, #e2bd64);
+}
+:global(html.dark) .dayNumber[aria-current="date"] {
+  background: #0f1b3d;
+  outline: 1px solid #64748b;
+}
+:global(html.dark) .event[data-color="brand"], :global(html.dark) .event[data-color="purple"] {
+  --event-color: #94a3b8;
+}
+:global(html.dark) .navigation button:hover, :global(html.dark) .more:hover {
+  background: #1e293b;
+}
+:global(html.dark) .event {
+  background: color-mix(in srgb, var(--event-color) 12%, #0f172a);
+  border-color: color-mix(in srgb, var(--event-color) 40%, #334155);
+  color: color-mix(in srgb, var(--event-color) 35%, white);
+}
+@media (max-width: 640px) {
+  .header {
+    padding: 16px;
+    gap: 10px;
+  }
+  .heading h2 {
+    font-size: 16px;
+  }
+  .heading p {
+    font-size: 11px;
+  }
+  .heading {
+    gap: 8px;
+  }
+  .header .dateBadge {
+    width: 40px;
+  }
+  .controls > div > button {
+    gap: 6px;
+    padding: 8px;
+    font-size: 12px;
+  }
+  .monthTitle {
+    gap: 6px;
+  }
+  .navigation button {
+    font-size: 12px;
+  }
+}
